@@ -1,0 +1,174 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  background: #08070b;
+  padding: 64px 16px;
+}
+
+main h1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #817d92;
+  margin-bottom: 31px;
+}
+main .first-container {
+  background: #24232c;
+  margin-bottom: 16px;
+}
+main .first-container form {
+  display: flex;
+  align-items: center;
+}
+main .first-container form input {
+  padding: 19px 32px;
+  background-color: transparent;
+}
+main .first-container form ::-moz-placeholder {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+  color: hsla(252, 11%, 91%, 0.25);
+}
+main .first-container form ::placeholder {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+  color: hsla(252, 11%, 91%, 0.25);
+}
+main .first-container form .copy {
+  height: 20px;
+  width: 17.5px;
+}
+main .second-container {
+  padding: 24px 32px 32px 32px;
+  background: #24232c;
+}
+main .second-container form label {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #e6e5ea;
+}
+main .second-container .options-container {
+  margin-top: 32px;
+}
+main .second-container .options-container .option + .option {
+  margin-top: 20px;
+}
+main .second-container .options-container .option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+main .second-container .options-container .option p {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #e6e5ea;
+  margin-left: 24px;
+}
+main .second-container .strength-container {
+  background: #18171f;
+  padding: 23px 31.5px 21px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+main .second-container .strength-container p {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #817d92;
+}
+main .second-container .strength-container .strength .four-rectangels {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 15px;
+}
+main .second-container .strength-container .strength .four-rectangels .rectangle + .rectangle {
+  margin-left: 8px;
+}
+main .second-container .strength-container .strength .four-rectangels .rectangle {
+  height: 28px;
+  width: 10px;
+  border: 2px solid #e6e5ea;
+}
+/*##### for-phone-only ##########*/
+/*############ for-tablet-portrait-up ##############*/
+/*############ for-tablet-landscape-up #############*/
+/*############ for-desktop-up ###########*/
+/*############ for-big-desktop-up ##########*//*# sourceMappingURL=style.css.map */
