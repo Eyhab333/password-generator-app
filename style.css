@@ -87,28 +87,31 @@ main .first-container {
   margin-bottom: 16px;
 }
 main .first-container form {
+  padding: 19px 32px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 main .first-container form input {
-  padding: 19px 32px;
+  padding-top: 19px;
   background-color: transparent;
 }
 main .first-container form ::-moz-placeholder {
   font-weight: 700;
   font-size: 32px;
-  line-height: 42px;
   color: hsla(252, 11%, 91%, 0.25);
 }
 main .first-container form ::placeholder {
   font-weight: 700;
   font-size: 32px;
-  line-height: 42px;
   color: hsla(252, 11%, 91%, 0.25);
 }
 main .first-container form .copy {
-  height: 20px;
-  width: 17.5px;
+  height: 24px;
+  width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 main .second-container {
   padding: 24px 32px 32px 32px;
@@ -120,23 +123,86 @@ main .second-container form label {
   line-height: 24px;
   color: #e6e5ea;
 }
+main .second-container form input {
+  width: 100%;
+}
 main .second-container .options-container {
   margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  /* Hide the default checkbox */
+  /* Creating a custom checkbox
+  based on demand */
+  /* Specify the background color to be
+  shown when hovering over checkbox */
+  /* Specify the background color to be
+  shown when checkbox is active */
+  /* Specify the background color to be
+  shown when checkbox is checked */
+  /* Checkmark to be shown in checkbox */
+  /* It is not be shown when not checked */
+  /* Display checkmark when checked */
+  /* Styling the checkmark using webkit */
+  /* Rotated the rectangle by 45 degree and 
+  showing only two border to make it look
+  like a tickmark */
 }
 main .second-container .options-container .option + .option {
   margin-top: 20px;
 }
-main .second-container .options-container .option {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-main .second-container .options-container .option p {
+main .second-container .options-container label {
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
   color: #e6e5ea;
-  margin-left: 24px;
+  display: block;
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+main .second-container .options-container .option {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+main .second-container .options-container input[type=checkbox] {
+  visibility: hidden;
+}
+main .second-container .options-container .check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #24232c;
+  border: 2px solid #e6e5ea;
+}
+main .second-container .options-container .option:hover input ~ .check {
+  border: 2px solid #a4ffaf;
+}
+main .second-container .options-container .option input:active ~ .check {
+  background-color: #a4ffaf;
+}
+main .second-container .options-container .option input:checked ~ .check {
+  background-color: #a4ffaf;
+}
+main .second-container .options-container .check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+main .second-container .options-container .option input:checked ~ .check:after {
+  display: block;
+}
+main .second-container .options-container .option .check:after {
+  left: 5px;
+  bottom: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid #18171f;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
 }
 main .second-container .strength-container {
   background: #18171f;
@@ -167,8 +233,120 @@ main .second-container .strength-container .strength .four-rectangels .rectangle
   width: 10px;
   border: 2px solid #e6e5ea;
 }
+main .second-container a {
+  background: #a4ffaf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+main .second-container a .arrow {
+  height: 12px;
+  width: 11.1054077148px;
+  margin-left: 16px;
+}
+
+form input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+form input[type=range]:focus {
+  outline: none;
+}
+form input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #A4FFAF;
+  border: 0.2px solid #A4FFAF;
+}
+form input[type=range]::-webkit-slider-thumb {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background: #E6E5EA;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
+form input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #A4FFAF;
+}
+form input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: #A4FFAF;
+}
+form input[type=range]::-moz-range-thumb {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -10px;
+}
+form input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+form input[type=range]::-ms-fill-lower {
+  background: #A4FFAF;
+  border: 0.2px solid #A4FFAF;
+}
+form input[type=range]::-ms-fill-upper {
+  background: #A4FFAF;
+  border: 0.2px solid #A4FFAF;
+}
+form input[type=range]::-ms-thumb {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -10px;
+}
+form input[type=range]:focus::-ms-fill-lower {
+  background: #A4FFAF;
+}
+form input[type=range]:focus::-ms-fill-upper {
+  background: #A4FFAF;
+}
+
 /*##### for-phone-only ##########*/
+@media (max-width: 599px) {
+  .copy {
+    margin-right: 0px;
+  }
+}
 /*############ for-tablet-portrait-up ##############*/
+@media (600px <= width <= 899px) {
+  body {
+    padding-left: 114px;
+    padding-right: 114px;
+  }
+}
 /*############ for-tablet-landscape-up #############*/
+@media (900px <= width <= 1199px) {
+  body {
+    padding-left: 214px;
+    padding-right: 214px;
+  }
+}
 /*############ for-desktop-up ###########*/
+@media (min-width: 1200px) {
+  body {
+    padding-top: 133px;
+    padding-left: 450px;
+    padding-right: 450px;
+  }
+}
 /*############ for-big-desktop-up ##########*//*# sourceMappingURL=style.css.map */

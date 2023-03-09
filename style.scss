@@ -93,26 +93,28 @@ main {
     margin-bottom: 16px;
 
     form {
+      padding: 19px 32px;
       display: flex;
       align-items: center;
-      // justify-content: space-between;
+      justify-content: space-between;
 
       input {
-        padding: 19px 32px;
+        padding-top: 19px;
         background-color: transparent;
       }
 
       ::placeholder {
         font-weight: 700;
         font-size: 32px;
-        line-height: 42px;
         color: hsla(252, 11%, 91%, 0.25);
       }
 
       .copy {
-        height: 20px;
-        width: 17.5px;
-        // margin-right: 32px;
+        height: 24px;
+        width: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
@@ -130,33 +132,101 @@ main {
       }
 
       input {
+        width: 100%;
       }
     }
 
     .options-container {
       margin-top: 32px;
+      display: flex;
+      flex-direction: column;
 
       .option + .option {
         margin-top: 20px;
       }
 
+      label {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        color: #e6e5ea;
+        display: block;
+        position: relative;
+        padding-left: 45px;
+        margin-bottom: 15px;
+        cursor: pointer;
+      }
+
       .option {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        display: block;
+        position: relative;
+        // padding-left: 45px;
+        cursor: pointer;
+        // font-size: 20px;
+      }
 
-        form {
-          input {
-          }
-        }
+      /* Hide the default checkbox */
+      input[type="checkbox"] {
+        visibility: hidden;
+      }
 
-        p {
-          font-weight: 700;
-          font-size: 18px;
-          line-height: 24px;
-          color: #e6e5ea;
-          margin-left: 24px;
-        }
+      /* Creating a custom checkbox
+      based on demand */
+      .check {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #24232c;
+        border: 2px solid #e6e5ea;
+      }
+
+      /* Specify the background color to be
+      shown when hovering over checkbox */
+      .option:hover input ~ .check {
+        border: 2px solid #a4ffaf;
+      }
+
+      /* Specify the background color to be
+      shown when checkbox is active */
+      .option input:active ~ .check {
+        background-color: #a4ffaf;
+      }
+
+      /* Specify the background color to be
+      shown when checkbox is checked */
+      .option input:checked ~ .check {
+        background-color: #a4ffaf;
+      }
+
+      /* Checkmark to be shown in checkbox */
+      /* It is not be shown when not checked */
+      .check:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Display checkmark when checked */
+      .option input:checked ~ .check:after {
+        display: block;
+      }
+
+      /* Styling the checkmark using webkit */
+      /* Rotated the rectangle by 45 degree and 
+      showing only two border to make it look
+      like a tickmark */
+      .option .check:after {
+        left: 5px;
+        bottom: 3px;
+        width: 6px;
+        height: 12px;
+        border: solid #18171f;
+        border-width: 0 4px 4px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
       }
     }
 
@@ -195,26 +265,139 @@ main {
       }
     }
 
-    button {
+    a {
+      background: #a4ffaf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      cursor: pointer;
+
+      .arrow {
+        height: 12px;
+        width: 11.10540771484375px;
+        margin-left: 16px;
+      }
     }
+  }
+}
+
+// style input range
+form {
+
+  input[type=range] {
+    -webkit-appearance: none;
+    margin: 18px 0;
+    width: 100%;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  // ===== webkit
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: #A4FFAF;
+    border: 0.2px solid #A4FFAF;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: #E6E5EA;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -10px;
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #A4FFAF;
+  }
+  
+  // ====== moz
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: #A4FFAF;
+  }
+  input[type=range]::-moz-range-thumb {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -10px;
+  }
+  
+  // ========= ms
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #A4FFAF;
+    border: 0.2px solid #A4FFAF;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #A4FFAF;
+    border: 0.2px solid #A4FFAF;
+  }
+  input[type=range]::-ms-thumb {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -10px;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #A4FFAF;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #A4FFAF;
   }
 }
 /*##### for-phone-only ##########*/
 @media (max-width: 599px) {
+  .copy {
+    margin-right: 0px;
+    // width: 130px;
+  }
 }
 
 /*############ for-tablet-portrait-up ##############*/
-@media (min-width: 600px) {
+@media (600px <= width <= 899px) {
+  body {
+    padding-left: 114px;
+    padding-right: 114px;
+  }
 }
-// @media (600px <= width <= 899px) {}
 
 /*############ for-tablet-landscape-up #############*/
-@media (min-width: 900px) {
+@media (900px <= width <= 1199px) {
+  body {
+    padding-left: 214px;
+    padding-right: 214px;
+  }
 }
-// @media (900px <= width <= 1199px) {}
 
 /*############ for-desktop-up ###########*/
 @media (min-width: 1200px) {
+  body {
+    padding-top: 133px;
+    padding-left: 450px;
+    padding-right: 450px;
+  }
 }
 
 /*############ for-big-desktop-up ##########*/
